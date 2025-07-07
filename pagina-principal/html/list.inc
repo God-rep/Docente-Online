@@ -57,7 +57,7 @@
             document.dispatchEvent(clicaNovaTurma);
           }
         }
-    });
+      });
       </script>
       <div class="list-group list-group-flush border-bottom scrollarea">
         <!-- Item 1 -->
