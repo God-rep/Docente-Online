@@ -1343,7 +1343,10 @@ function atualizaHTML(){
 	for(const child of listaTurmasHTML.children){
 		let turmaFilhoID = child.querySelector(".turmaID").textContent;
 		if (turmaFilhoID === turmaIDAtual){
-			child.dispatchEvent("click");
+			child.dispatchEvent(new MouseEvent("click", {
+				bubbles: true,
+				cancelable: true
+			}));
 		}
 	}
 }
