@@ -1436,6 +1436,7 @@ function carregaDoStorage(){
 	
 	//turmaIDAtual = primeira string (codigo de turma) + " " + penultima string (numero da turma) + " " + semestre atual
 	turmaIDAtual = (infoTurmaSeparada[0]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-2)]+" "+ semestreAtual);
+	console.log("turmaID atualizada!:" + turmaIDAtual);
 
 	//Outro split, mas dessa vez so com \n
 	infoTurma = infoTurma.split("\n");
@@ -1443,7 +1444,7 @@ function carregaDoStorage(){
 
 //Aciona ao clicar nos botões de cada disciplina
 function mudaTurma(novaTurmaID){
-	let turmaAchada = turmas.find(turma => turma.turmaID === novaTurmaID)
+	let turmaAchada = turmas.find(turma => turma.turmaID === novaTurmaID);
 	listaAlunos = turmaAchada?.alunos;
 	
 	//Redefine valores manipulando o DOM para que as informações do site batam com as da nova disciplina
