@@ -1339,12 +1339,6 @@ let semestreAtual = "2025/1";
 //Lista das turmas no html
 let listaTurmaHTML;
 
-//Espera carregar o conteúdo de busca de disciplinas
-document.addEventListener("DOMContentLoaded", () => {
-  listaTurmaHTML = document.querySelector('#disciplinas');
-});
-
-
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 function atualizaHTML(){
@@ -1415,10 +1409,11 @@ document.addEventListener("clicaNovaTurma", (e) => {
 	mudaTurma(turmaIDAtual);
 });
 
-//Inicia página pela primeira vez
-function iniciaPag(){
+
+
+//Inicia o script apos o carregamento da pagina
+document.addEventListener("DOMContentLoaded", () => {
+	listaTurmaHTML = document.querySelector('#disciplinas');
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
-}
-iniciaPag();
-
+});
