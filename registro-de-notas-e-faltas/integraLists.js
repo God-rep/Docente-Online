@@ -1411,7 +1411,7 @@ document.addEventListener("clicaNovaTurma", (e) => {
 
 //Inicia o script apos o carregamento da pagina
 document.addEventListener("DOMContentLoaded", () => {
-	listaTurmaHTML = document.querySelector('#disciplinas');
+	listaTurmasHTML = document.querySelector('#disciplinas');
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
 });
