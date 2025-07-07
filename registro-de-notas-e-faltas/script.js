@@ -105,7 +105,7 @@ function exibirInformacoes(disciplina){
     TURMA: ${jsonDisciplina.turmas[0].numero} <br> 
     HORARIO: ${jsonDisciplina.turmas[0].horario} <br>
     EMENTÁRIO: <a href="${jsonDisciplina.ementa}">${jsonDisciplina.ementa}</a>
-    <span style="display: none;" class = "turmaID">${disciplina.turmas[0].turmaID}</span>
+    <span style="display: none;" class = "turmaID">${jsonDisciplina.turmas[0].turmaID}</span>
   </div>
   `
   detalhes.appendChild(infoDisc);
