@@ -1345,7 +1345,7 @@ function atualizaHTML(){
 		let turmaFilhoID = child.querySelector(".turmaID")?.textContent || " ";
 		console.log("turma a ser comparada: " + turmaFilhoID);
 		if (turmaFilhoID === turmaIDAtual){
-			console.log("botao achado: " + turmafilhoID);
+			console.log("botao achado: " + turmaFilhoID);
 			child.dispatchEvent(new MouseEvent("click", {
 				bubbles: true,
 				cancelable: true
