@@ -1461,7 +1461,7 @@ document.addEventListener("clicaNovaTurma", (e) => {
 function iniciaPag(){
 	turmas = localStorage.getItem("turmas");
 	carregaDoStorage();
-	mudaDisciplina(turmaIDAtual);
+	mudaTurma(turmaIDAtual);
 }
 iniciaPag();
 
