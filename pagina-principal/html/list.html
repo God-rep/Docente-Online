@@ -37,7 +37,7 @@
       container.addEventListener('click', function(evento) {
         //Se clicou em algum elemento da lista de disciplinas e nao em nenhum ementario
         if ((evento.target.closest('.list-group-item.list-group-item-action.py-3.lh-sm'))
-           && !(evento.target.matches('.col-10.mb-1.small.text-uerj-amarelo'))){
+           && !(evento.target.matches('.text-uerj-laranja'))){
           let elementoClicado = evento.target.closest('.list-group-item.list-group-item-action.py-3.lh-sm');
           let textoBotao = elementoClicado.textContent;
 
