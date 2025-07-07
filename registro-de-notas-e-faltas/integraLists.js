@@ -1418,6 +1418,7 @@ function mudaTurma(novaTurmaID){
 
 //Chama troca de turma
 document.addEventListener("clicaNovaTurma", (e) => {
+	console.log("Nova turma selecionada!");
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
 });
