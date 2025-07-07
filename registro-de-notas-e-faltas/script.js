@@ -1430,6 +1430,8 @@ Entao, para um infoTurma com n elementos:
 
 function carregaDoStorage(){
 	infoTurma = localStorage.getItem("turmaAtualInfo");
+	console.log("infoTurma carrgada!: " + infoTurma);
+
 		
 	//Transforma o texto do elemento clicado em uma lista de strings
 	let infoTurmaSeparada = infoTurma.split(/[ \n]+/);
