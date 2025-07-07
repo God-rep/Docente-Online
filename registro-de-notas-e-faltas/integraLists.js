@@ -1334,8 +1334,6 @@ let infoTurma;
 //Variavel que define o semestre em curso
 let semestreAtual = "2025/1";
 
-let urlBaseEmentario = "https://www.ementario.uerj.br/ementa.php?cdg_disciplina=10833";
-
 /*----------------Pegar as partes relevantes do site com variáveia aqui, para serem editadas depois no código-------------------*/
  
 //Lista das turmas no html
@@ -1344,7 +1342,7 @@ let listaTurmaHTML = document.querySelector('.d-flex.flex-column.my-3');
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 function atualizaHTML(){
-
+	
 }
 
 /* Exemplo de linha da tabela
@@ -1373,7 +1371,6 @@ Entao, para um infoTurma com n elementos:
 [n-1] -> Sempre "Ementario" 
 */
 
-
 function carregaDoStorage(){
 	infoTurma = localStorage.getItem("turmaAtualInfo");
 	infoTurma.trim();
@@ -1401,7 +1398,7 @@ function mudaTurma(novaTurmaID){
 	atualizaHTML();
 }
 
-//Chama a função 
+//Chama troca de turma
 document.addEventListener("clicaNovaTurma", (e) => {
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
