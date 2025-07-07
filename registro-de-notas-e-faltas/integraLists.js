@@ -1340,9 +1340,12 @@ let listaTurmasHTML;
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 function atualizaHTML(){
+	console.log("turma procurada: " + turmaAtualID);
 	for(const child of listaTurmasHTML.children){
 		let turmaFilhoID = child.querySelector(".turmaID").textContent;
+		console.log("turma a ser comparada: " + turmaFilhoID);
 		if (turmaFilhoID === turmaIDAtual){
+			console.log("botao achado: " + turmafilhoID);
 			child.dispatchEvent(new MouseEvent("click", {
 				bubbles: true,
 				cancelable: true
