@@ -1438,7 +1438,7 @@ function carregaDoStorage(){
 	turmaIDAtual = (infoTurmaSeparada[0]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-2)]+" "+ semestreAtual);
 
 	//Outro split, mas dessa vez so com \n
-	infoTurma = infoTurma.split(\n);
+	infoTurma = infoTurma.split("\n");
 }
 
 //Aciona ao clicar nos botões de cada disciplina
