@@ -1340,7 +1340,7 @@ let listaTurmasHTML;
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 function atualizaHTML(){
-	console.log("turma procurada: " + turmaAtualID);
+	console.log("turma procurada: " + turmaIDAtual);
 	for(const child of listaTurmasHTML.children){
 		let turmaFilhoID = child.querySelector(".turmaID").textContent;
 		console.log("turma a ser comparada: " + turmaFilhoID);
