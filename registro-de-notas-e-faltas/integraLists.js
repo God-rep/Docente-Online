@@ -1341,9 +1341,18 @@ let listaTurmasHTML;
 
 function atualizaHTML(){
 	console.log("turma procurada: " + turmaIDAtual);
+	
 	for(const child of listaTurmasHTML.children){
-		let turmaFilhoID = child.querySelector(".turmaID")?.textContent || " ";
+		let turmaFilhoID = child.querySelector(".turmaID");
+
+		if (!turmaFilhoID) {
+      			console.warn("Elemento .turmaID não encontrado em: ", child);
+     			continue;
+    		}
+
+		turmaFilhoID = turmaFilhoID.textContent;
 		console.log("turma a ser comparada: " + turmaFilhoID);
+		
 		if (turmaFilhoID === turmaIDAtual){
 			console.log("botao achado: " + turmaFilhoID);
 			child.dispatchEvent(new MouseEvent("click", {
