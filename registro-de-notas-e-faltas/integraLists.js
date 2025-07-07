@@ -1338,53 +1338,13 @@ let urlBaseEmentario = "https://www.ementario.uerj.br/ementa.php?cdg_disciplina=
 
 /*----------------Pegar as partes relevantes do site com variáveia aqui, para serem editadas depois no código-------------------*/
  
-//Tabela que será usada para mostrar dados dos alunos
-let tabelaHTML = document.querySelector('.table.table-sm.table-striped.table-hover.table-bordered');
-
-//Informacoes sobre a turma no html
-let turmaHTML = document.querySelector('.d-flex.flex-column.my-3');
+//Lista das turmas no html
+let listaTurmaHTML = document.querySelector('.d-flex.flex-column.my-3');
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
-function atualizaTurmaHTML(){
+function atualizaHTML(){
 
-	for (const child of turmaHTML.children) {
-  		let textoChildSeparado = (child.textContent).split(/: /);
-		let nomeETurma = (infoTurma[infoTurma.length-2]).split(" - ");
-		let nomeDisciplina = nomeETurma[0];
-		let numeroTurma = (nomeETurma[1].split(" "))[1];
-
-		let numeroEmentario = (infoTurma[0].split("-"))[1];
-
-		let horarios = "";
-		for(let i = 1; i <(infoTurma.length-2); i++){
-			horarios += infoTurma[i];
-			horarios += " ";
-		}
-		
-		switch(textoChildSeparado[0]){
-			case "Disciplina":
-				//"Disciplina" + ": " + Codigo pego no localStorage
-				child.textContent = textoChildSeparado[0] + ": " + infoTurma[0];
-				break;
-			case "Nome":
-				//"Nome" + ": " + Nome pego no localStorage
-				child.textContent = textoChildSeparado[0] + ": " + nomeDisciplina;
-				break;
-			case "Turma":
-				//"Turma" + ": " + Numero da turma pego no localStorage
-				child.textContent = textoChildSeparado[0] + ": " + numeroTurma;
-				break;
-			case "Horários":
-				//"Horários" + ": " + horarios pegos no localStorage
-				child.textContent = textoChildSeparado[0] + ": " + numeroTurma;
-				break;
-			case "Ementa":
-				//link base de todos os ementarios + final do codigo de disciplina
-				child.href = urlBaseEmentario + numeroEmentario;
-				break;
-		}
-	}
 }
 
 /* Exemplo de linha da tabela
@@ -1398,20 +1358,6 @@ function atualizaTurmaHTML(){
 [7]	0.0			//Media Final
 [8]	7			//Total de faltas
 */
-
-
-
-function atualizaTabelaHTML(){
-		
-	let tableBody = tabelaHTML.querySelector("tbody");
-
-	/*
-		Implementar a mudança de alunos ao clicar em outra disciplina 
- 	*/
-	
-	
-
-}
 
 /* Exemplo de infoTurma
 [0]	IME04-10833	//codigo
@@ -1451,8 +1397,8 @@ function mudaTurma(novaTurmaID){
 	listaAlunos = turmaAchada?.alunos;
 	
 	//Redefine valores manipulando o DOM para que as informações do site batam com as da nova disciplina
-	atualizaTurmaHTML();
-	atualizaTabelaHTML();
+	//A ideia eh pegar a turma que bata com as informacoes carregadas na lista de turmas
+	atualizaHTML();
 }
 
 //Chama a função 
@@ -1463,7 +1409,6 @@ document.addEventListener("clicaNovaTurma", (e) => {
 
 //Inicia página pela primeira vez
 function iniciaPag(){
-	//turmas = localStorage.getItem("turmas");
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
 }
