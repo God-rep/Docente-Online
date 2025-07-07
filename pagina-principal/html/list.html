@@ -35,10 +35,11 @@
 
       //Ao clicar
       container.addEventListener('click', function(evento) {
-        //Se clicou em algum elemento da lista de disciplinas
-        if (evento.target.matches('.list-group-item.list-group-item-action.py-3.lh-sm')){
-        
-          let textoBotao = evento.target.textContent;
+        //Se clicou em algum elemento da lista de disciplinas e nao em nenhum ementario
+        if ((evento.target.closest('.list-group-item.list-group-item-action.py-3.lh-sm'))
+           && !(evento.target.matches('.col-10.mb-1.small.text-uerj-amarelo'))){
+          let elementoClicado = evento.target.closest('.list-group-item.list-group-item-action.py-3.lh-sm');
+          let textoBotao = elementoClicado.textContent;
 
           //Pega URL da página, tentando deduzir qual html esta aberto no momento
           const paginaAtual = ajeitaPath(window.location.pathname);
