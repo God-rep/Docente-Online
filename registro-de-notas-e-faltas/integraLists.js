@@ -1337,12 +1337,23 @@ let semestreAtual = "2025/1";
 /*----------------Pegar as partes relevantes do site com variáveia aqui, para serem editadas depois no código-------------------*/
  
 //Lista das turmas no html
-let listaTurmaHTML = document.querySelector('.d-flex.flex-column.my-3');
+let listaTurmaHTML;
+
+//Espera carregar o conteúdo de busca de disciplinas
+document.addEventListener("DOMContentLoaded", () => {
+  listaTurmaHTML = document.querySelector('#disciplinas');
+});
+
 
 /*------------------------------------------------------------------------------------------------------------------------------*/
 
 function atualizaHTML(){
-	
+	for(const child of listaTurmasHTML.children){
+		let turmaFilhoID = child.querySelector(".turmaID").textContent;
+		if (turmaFilhoID === turmaIDAtual){
+			child.dispatchEvent("click");
+		}
+	}
 }
 
 /* Exemplo de linha da tabela
