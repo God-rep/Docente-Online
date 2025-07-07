@@ -1444,7 +1444,7 @@ function carregaDoStorage(){
 
 //Aciona ao clicar nos botões de cada disciplina
 function mudaTurma(novaTurmaID){
-	let turmaAchada = turmas.find(turma => turma.turmaID === novaTurmaID);
+	let turmaAchada = turmas.turmas.find(turma => turma.turmaID === novaTurmaID);
 	listaAlunos = turmaAchada?.alunos;
 	
 	//Redefine valores manipulando o DOM para que as informações do site batam com as da nova disciplina
