@@ -67,6 +67,7 @@ Entao, para um infoTurma com n elementos:
 
 function carregaDoStorage(){
 	infoTurma = localStorage.getItem("turmaAtualInfo");
+	localStorage
 	infoTurma.trim();
 	console.log("infoTurma carregada!: " + infoTurma);
 		
@@ -78,8 +79,7 @@ function carregaDoStorage(){
 	turmaIDAtual = (infoTurmaSeparada[1]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-3)]+" "+ semestreAtual);
 	console.log("turmaID atualizada!:" + turmaIDAtual);
 
-	//Outro split, mas dessa vez com todas as sequencias de espaco, com excecao de whitespace " ".
-	infoTurma = infoTurma.split(/[\t\r\n]+/);
+	localStorage.removeItem("turmaAtualInfo");
 }
 
 //Aciona ao clicar nos botões de cada disciplina
@@ -101,6 +101,9 @@ document.addEventListener("clicaNovaTurma", (e) => {
 //Inicia o script apos o carregamento da pagina
 document.addEventListener("DOMContentLoaded", () => {
 	listaTurmasHTML = document.querySelector('#disciplinas');
-	carregaDoStorage();
-	mudaTurma(turmaIDAtual);
+	let existeNovaTurma = (localStorage.getItem("turmaAtualInfo") !=== null);
+	if(existeNovaTurma){
+		carregaDoStorage();
+		mudaTurma(turmaIDAtual);
+	}
 });
