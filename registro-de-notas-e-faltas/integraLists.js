@@ -1324,8 +1324,6 @@ let turmas = {"turmas":[
 
 //Diz em qual turma esta
 let turmaIDAtual;
-//Diz lista de alunos da turma atual
-let listaAlunos;
 
 //Codigo da disciplina, nome, numero da turma e horarios
 //Site da ementa pode ser deduzido do codigo da disciplina
