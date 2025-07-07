@@ -101,7 +101,7 @@ document.addEventListener("clicaNovaTurma", (e) => {
 //Inicia o script apos o carregamento da pagina
 document.addEventListener("DOMContentLoaded", () => {
 	listaTurmasHTML = document.querySelector('#disciplinas');
-	let existeNovaTurma = (localStorage.getItem("turmaAtualInfo") !=== null);
+	let existeNovaTurma = (localStorage.getItem("turmaAtualInfo") !== null);
 	if(existeNovaTurma){
 		carregaDoStorage();
 		mudaTurma(turmaIDAtual);
