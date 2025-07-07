@@ -12,7 +12,7 @@ function ajeitaPath(path) {
 //Ao clicar
 container.addEventListener('click', function(evento) {
   //Se clicou em algum elemento da lista de disciplinas
-  if (evento.target.matches('.list-group-item.list-group-item-action.py-3.lh-sm')){
+  if (evento.target.closest('.list-group-item.list-group-item-action.py-3.lh-sm')){
 
     let textoBotao = evento.target.textContent;
 
