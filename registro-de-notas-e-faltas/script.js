@@ -1460,7 +1460,7 @@ document.addEventListener("clicaNovaTurma", (e) => {
 
 //Inicia página pela primeira vez
 function iniciaPag(){
-	turmas = localStorage.getItem("turmas");
+	//turmas = localStorage.getItem("turmas");
 	carregaDoStorage();
 	mudaTurma(turmaIDAtual);
 }
