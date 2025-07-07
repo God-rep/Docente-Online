@@ -34,6 +34,7 @@ function atualizaHTML(){
 				bubbles: true,
 				cancelable: true
 			}));
+			break;
 		}
 	}
 }
