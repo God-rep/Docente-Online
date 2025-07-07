@@ -1430,18 +1430,19 @@ Entao, para um infoTurma com n elementos:
 
 function carregaDoStorage(){
 	infoTurma = localStorage.getItem("turmaAtualInfo");
-	console.log("infoTurma carrgada!: " + infoTurma);
-
+	infoTurma.trim();
+	console.log("infoTurma carregada!: " + infoTurma);
 		
 	//Transforma o texto do elemento clicado em uma lista de strings
-	let infoTurmaSeparada = infoTurma.split(/[ \n]+/);
+	let infoTurmaSeparada = infoTurma.split(/\s+/);
+	console.log("infoTurma quebrada!: " + infoTurmaSeparada);
 	
 	//turmaIDAtual = primeira string (codigo de turma) + " " + penultima string (numero da turma) + " " + semestre atual
 	turmaIDAtual = (infoTurmaSeparada[0]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-2)]+" "+ semestreAtual);
 	console.log("turmaID atualizada!:" + turmaIDAtual);
 
-	//Outro split, mas dessa vez so com \n
-	infoTurma = infoTurma.split("\n");
+	//Outro split, mas dessa vez com todas as sequencias de espaco, com excecao de whitespace " ".
+	infoTurma = infoTurma.split(/[\t\r\n]+/);
 }
 
 //Aciona ao clicar nos botões de cada disciplina
