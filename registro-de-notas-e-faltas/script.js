@@ -1437,8 +1437,8 @@ function carregaDoStorage(){
 	let infoTurmaSeparada = infoTurma.split(/\s+/);
 	console.log("infoTurma quebrada!: " + infoTurmaSeparada);
 	
-	//turmaIDAtual = primeira string (codigo de turma) + " " + penultima string (numero da turma) + " " + semestre atual
-	turmaIDAtual = (infoTurmaSeparada[0]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-2)]+" "+ semestreAtual);
+	//turmaIDAtual = segunda string (codigo de turma) + " " + antepenultima string (numero da turma) + " " + semestre atual
+	turmaIDAtual = (infoTurmaSeparada[1]+" "+infoTurmaSeparada[(infoTurmaSeparada.length-3)]+" "+ semestreAtual);
 	console.log("turmaID atualizada!:" + turmaIDAtual);
 
 	//Outro split, mas dessa vez com todas as sequencias de espaco, com excecao de whitespace " ".
